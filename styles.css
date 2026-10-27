@@ -1,0 +1,248 @@
+/* Colores: el verde azulado del CV en PDF */
+:root {
+  --verde: #0f6b66;
+  --verde-oscuro: #0a4a47;
+  --verde-claro: #e3f1ef;
+  --texto: #1f2a2a;
+  --texto-suave: #5b6a69;
+  --fondo: #fbfaf7;
+  --borde: #d9e4e2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+  line-height: 1.6;
+}
+
+a { color: var(--verde); }
+
+.contenedor {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Encabezado ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--verde-oscuro), var(--verde));
+  color: #fff;
+  padding: 64px 0 56px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.foto {
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.etiqueta {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 8px 0 12px;
+}
+
+.lema {
+  margin: 0 0 20px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 4px;
+}
+
+.contacto span {
+  display: inline-block;
+  min-width: 90px;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.contacto a { color: #fff; }
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--verde-oscuro);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+
+.boton:hover { transform: translateY(-2px); }
+
+.boton.secundario {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Secciones ---------- */
+main { padding: 48px 20px 24px; }
+
+section { margin-bottom: 48px; }
+
+h2 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--verde-oscuro);
+  font-size: 1.6rem;
+  margin: 0 0 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--verde-claro);
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--verde);
+}
+
+.perfil {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* Línea de tiempo de experiencia */
+.linea-tiempo {
+  border-left: 3px solid var(--verde-claro);
+  padding-left: 24px;
+}
+
+.trabajo {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.trabajo::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--verde);
+  border: 3px solid var(--fondo);
+}
+
+.fecha {
+  margin: 0 0 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.lugar {
+  margin: 2px 0 8px;
+  font-weight: 500;
+  color: var(--texto-suave);
+}
+
+.trabajo ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.trabajo li { margin-bottom: 4px; }
+
+/* Formación y cursos */
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.estudio { margin-bottom: 20px; }
+
+.detalle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+/* Habilidades */
+.habilidades {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.habilidades li {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-left: 4px solid var(--verde);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+/* ---------- Pie de página ---------- */
+footer {
+  background: var(--verde-claro);
+  padding: 32px 0;
+  text-align: center;
+}
+
+footer p { margin: 4px 0; }
+
+.pequeno {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- Celulares ---------- */
+@media (max-width: 700px) {
+  .hero { padding: 40px 0; text-align: center; }
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; justify-items: center; }
+  .foto { width: 160px; }
+  .contacto { justify-items: center; }
+  .contacto span { min-width: 0; margin-right: 6px; }
+  .botones { justify-content: center; }
+  .dos-columnas { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* ---------- Al imprimir ---------- */
+@media print {
+  .botones { display: none; }
+  .hero { background: none; color: var(--texto); }
+  .contacto a { color: var(--texto); }
+}
